@@ -34,6 +34,36 @@ Avoid building “fancy” features unless they clearly improve the writing or r
 - Avoid UI complexity: minimal custom components, mostly semantic HTML + utility classes.
 - Keep dependencies lean and easy to maintain.
 
+## Color Palette
+Use this palette from the selected reference image:
+- `#2F4156` (Navy)
+- `#567C8D` (Teal)
+- `#C8D9E6` (Sky Blue)
+- `#F5EFEB` (Beige)
+- `#FFFFFF` (White)
+
+Suggested role mapping:
+- background: `#F5EFEB` (or `#FFFFFF`)
+- primary text: `#2F4156`
+- muted text/borders: `#567C8D`
+- accent links/highlights: `#567C8D`
+- soft surfaces/cards: `#C8D9E6`
+
+Alternative palette (Palette B, kept for future option):
+- `#243754` (Deep Navy)
+- `#C7C1B5` (Warm Stone)
+- `#C8B094` (Sand)
+- `#334764` (Slate Navy)
+
+Suggested role mapping for Palette B:
+- background: `#F5EFEB` or `#FFFFFF`
+- primary text: `#243754`
+- muted text/borders: `#C7C1B5`
+- accent links/highlights: `#334764`
+- soft surfaces/cards: `#C8B094`
+
+Note: Palette B hex values are approximate visual picks from the reference image and can be fine-tuned later.
+
 ## Non-Goals (for now)
 - comments system
 - user accounts

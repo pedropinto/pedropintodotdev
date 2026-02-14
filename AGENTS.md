@@ -46,6 +46,35 @@ Author profile and topics:
 - Prefer semantic HTML and simple utility composition.
 - Avoid decorative complexity unless it improves readability.
 
+Color tokens to use:
+- `navy`: `#2F4156`
+- `teal`: `#567C8D`
+- `sky`: `#C8D9E6`
+- `beige`: `#F5EFEB`
+- `white`: `#FFFFFF`
+
+Default color role mapping:
+- background: `beige` (fallback `white`)
+- primary text: `navy`
+- muted text and borders: `teal`
+- accent links/highlights: `teal`
+- surfaces/cards: `sky`
+
+Alternative palette (Palette B, optional future switch):
+- `deep-navy`: `#243754`
+- `warm-stone`: `#C7C1B5`
+- `sand`: `#C8B094`
+- `slate-navy`: `#334764`
+
+Palette B role mapping:
+- background: `beige` or `white`
+- primary text: `deep-navy`
+- muted text and borders: `warm-stone`
+- accent links/highlights: `slate-navy`
+- surfaces/cards: `sand`
+
+Note: Palette B values are approximate visual picks and may be refined during implementation.
+
 ## Content and Structure
 - Keep content in Markdown/MDX files in-repo.
 - Favor clear frontmatter and typed content collections.
