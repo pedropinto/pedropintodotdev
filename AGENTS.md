@@ -111,6 +111,10 @@ Important:
 - Commit each step independently once it is working.
 - Push frequently so each step can be cherry-picked or rolled back safely.
 - Keep commit messages explicit about the single change introduced.
+- Use commit message phrasing in this style:
+  - `Added ... to ...`
+  - `Removed ...`
+  - `Updated ...`
 
 ## Definition of Done (per change)
 - Matches project intent and minimalist scope
