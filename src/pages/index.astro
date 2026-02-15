@@ -7,11 +7,11 @@ const articles = await getVisibleArticles();
 const latest = articles.slice(0, 6);
 ---
 
-<BaseLayout title="Pedro Pinto | Engineering Blog" description="Minimalist blog on engineering, people, process, and leadership.">
+<BaseLayout title="Pedro Pinto | Engineering Blog" description="Minimalist blog on engineering, leadership, and processes.">
   <section class="grid max-w-4xl items-center gap-6 md:grid-cols-[auto_1fr]">
     <img
       src="/profilepic.jpg"
-      alt="Pedro Pinto profile picture"
+      alt="Pedro Pinto"
       class="h-24 w-24 rounded-full border border-[var(--color-muted)]/40 object-cover md:h-28 md:w-28"
       loading="eager"
       decoding="async"
@@ -22,7 +22,7 @@ const latest = articles.slice(0, 6);
         Pedro Pinto
       </h1>
       <p class="mt-4 text-base text-[var(--color-muted)] md:text-lg">
-        Writing about engineering, software development, people, process, and leadership.
+        Thoughts on Engineering, Leadership, AI, People and Processes. 
       </p>
       <a
         href="/articles/"
