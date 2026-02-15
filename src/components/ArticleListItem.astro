@@ -9,7 +9,7 @@ const { article } = Astro.props;
 ---
 
 <article
-  class="group rounded-2xl border border-[var(--color-muted)]/20 bg-[var(--color-white)]/80 p-6 shadow-[0_8px_24px_rgba(47,65,86,0.06)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_36px_rgba(47,65,86,0.12)]"
+  class="group rounded-2xl border border-[var(--color-muted)]/25 bg-[var(--color-surface)]/55 p-6 shadow-[0_8px_24px_rgba(47,65,86,0.06)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[var(--color-surface)]/70 hover:shadow-[0_14px_36px_rgba(47,65,86,0.12)]"
 >
   <p class="text-xs uppercase tracking-[0.14em] text-[var(--color-muted)]">
     <time datetime={article.data.date.toISOString()}>
