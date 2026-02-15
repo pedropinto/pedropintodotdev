@@ -3,36 +3,41 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="About | Pedro Pinto" description="About Pedro Pinto and what this blog covers.">
-  <article class="mx-auto max-w-3xl">
-    <img
-      src="/profilepic.jpg"
-      alt="Pedro Pinto profile picture"
-      class="h-24 w-24 rounded-full border border-[var(--color-muted)]/40 object-cover md:h-28 md:w-28"
-      loading="lazy"
-      decoding="async"
-    />
-    <h1 class="mt-5 font-heading text-4xl text-[var(--color-text)]">About</h1>
+  <article class="mx-auto grid max-w-5xl gap-10 md:grid-cols-[180px_1fr] md:items-start">
+    <aside class="md:sticky md:top-24">
+      <img
+        src="/profilepic.jpg"
+        alt="Pedro Pinto profile picture"
+        class="h-28 w-28 rounded-full border border-[var(--color-muted)]/40 object-cover md:h-40 md:w-40"
+        loading="lazy"
+        decoding="async"
+      />
+    </aside>
 
-    <p class="mt-5 text-lg text-[var(--color-muted)]">
-      I am an Engineering Manager who enjoys building software and writing about the craft of engineering.
-    </p>
+    <div>
+      <h1 class="font-heading text-4xl text-[var(--color-text)]">About</h1>
 
-    <section class="mt-8">
-      <h2 class="font-heading text-2xl text-[var(--color-text)]">What I write about</h2>
-      <ul class="mt-3 list-disc pl-6 text-[var(--color-muted)]">
-        <li>Engineering and software development</li>
-        <li>People and process</li>
-        <li>Leadership and management</li>
-        <li>Practical lessons from real projects</li>
-      </ul>
-    </section>
+      <p class="mt-5 text-lg text-[var(--color-muted)]">
+        I am an Engineering Manager who enjoys building software and writing about the craft of engineering.
+      </p>
 
-    <section class="mt-8">
-      <h2 class="font-heading text-2xl text-[var(--color-text)]">Contact</h2>
-      <ul class="mt-3 space-y-2 text-[var(--color-muted)]">
-        <li><a class="text-[var(--color-accent)] hover:underline" href="https://github.com/pedropinto" target="_blank" rel="noreferrer">GitHub</a></li>
-        <li><a class="text-[var(--color-accent)] hover:underline" href="https://www.linkedin.com/in/pedromspinto/" target="_blank" rel="noreferrer">LinkedIn</a></li>
-      </ul>
-    </section>
+      <section class="mt-8">
+        <h2 class="font-heading text-2xl text-[var(--color-text)]">What I write about</h2>
+        <ul class="mt-3 list-disc pl-6 text-[var(--color-muted)]">
+          <li>Engineering and software development</li>
+          <li>People and process</li>
+          <li>Leadership and management</li>
+          <li>Practical lessons from real projects</li>
+        </ul>
+      </section>
+
+      <section class="mt-8">
+        <h2 class="font-heading text-2xl text-[var(--color-text)]">Contact</h2>
+        <ul class="mt-3 space-y-2 text-[var(--color-muted)]">
+          <li><a class="text-[var(--color-accent)] hover:underline" href="https://github.com/pedropinto" target="_blank" rel="noreferrer">GitHub</a></li>
+          <li><a class="text-[var(--color-accent)] hover:underline" href="https://www.linkedin.com/in/pedromspinto/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+        </ul>
+      </section>
+    </div>
   </article>
 </BaseLayout>
