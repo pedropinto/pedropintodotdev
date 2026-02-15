@@ -98,7 +98,7 @@ Before coding, define the stack and content workflow that best supports this sco
 ## Implementation Plan (Pending)
 - [x] Define content model (`title`, `description`, `date`, `tags`, `draft`, `readingTime`)
 - [x] Create low-fidelity wireframes for Home, Articles, Article, and About
-- [ ] Define typography and spacing system (font choices, scale, line length, spacing)
+- [x] Define typography and spacing system (font choices, scale, line length, spacing)
 - [ ] Scaffold Astro + Tailwind + strict TypeScript project
 - [ ] Implement core pages (Home, Articles, Article template, About)
 - [ ] Add analytics events (`article_click`, `article_view`, `article_engaged`)
