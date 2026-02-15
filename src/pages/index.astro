@@ -8,20 +8,30 @@ const latest = articles.slice(0, 6);
 ---
 
 <BaseLayout title="Pedro Pinto | Engineering Blog" description="Minimalist blog on engineering, people, process, and leadership.">
-  <section class="max-w-3xl">
-    <p class="text-sm uppercase tracking-[0.18em] text-[var(--color-muted)]">Pedro Pinto</p>
-    <h1 class="mt-3 font-heading text-4xl leading-tight text-[var(--color-text)] md:text-5xl">
-      Engineering manager who likes to code.
-    </h1>
-    <p class="mt-4 text-base text-[var(--color-muted)] md:text-lg">
-      Writing about engineering, software development, people, process, and leadership.
-    </p>
-    <a
-      href="/articles/"
-      class="mt-6 inline-flex rounded-full border border-[var(--color-muted)] px-4 py-2 text-sm text-[var(--color-text)] transition-colors duration-200 hover:bg-[var(--color-surface)]"
-    >
-      View articles
-    </a>
+  <section class="grid max-w-4xl items-center gap-6 md:grid-cols-[auto_1fr]">
+    <img
+      src="/profilepic.jpg"
+      alt="Pedro Pinto profile picture"
+      class="h-24 w-24 rounded-full border border-[var(--color-muted)]/40 object-cover md:h-28 md:w-28"
+      loading="eager"
+      decoding="async"
+    />
+
+    <div>
+      <p class="text-sm uppercase tracking-[0.18em] text-[var(--color-muted)]">Pedro Pinto</p>
+      <h1 class="mt-3 font-heading text-4xl leading-tight text-[var(--color-text)] md:text-5xl">
+        Engineering manager who likes to code.
+      </h1>
+      <p class="mt-4 text-base text-[var(--color-muted)] md:text-lg">
+        Writing about engineering, software development, people, process, and leadership.
+      </p>
+      <a
+        href="/articles/"
+        class="mt-6 inline-flex rounded-full border border-[var(--color-muted)] px-4 py-2 text-sm text-[var(--color-text)] transition-colors duration-200 hover:bg-[var(--color-surface)]"
+      >
+        View articles
+      </a>
+    </div>
   </section>
 
   <section class="mt-12 md:mt-16">

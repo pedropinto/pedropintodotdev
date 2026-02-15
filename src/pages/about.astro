@@ -4,7 +4,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <BaseLayout title="About | Pedro Pinto" description="About Pedro Pinto and what this blog covers.">
   <article class="mx-auto max-w-3xl">
-    <h1 class="font-heading text-4xl text-[var(--color-text)]">About</h1>
+    <img
+      src="/profilepic.jpg"
+      alt="Pedro Pinto profile picture"
+      class="h-24 w-24 rounded-full border border-[var(--color-muted)]/40 object-cover md:h-28 md:w-28"
+      loading="lazy"
+      decoding="async"
+    />
+    <h1 class="mt-5 font-heading text-4xl text-[var(--color-text)]">About</h1>
 
     <p class="mt-5 text-lg text-[var(--color-muted)]">
       I am an Engineering Manager who enjoys building software and writing about the craft of engineering.
