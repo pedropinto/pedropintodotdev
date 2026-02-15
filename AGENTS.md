@@ -105,6 +105,13 @@ Important:
   - key tradeoffs and what we are intentionally not optimizing for
 - Do not add tokens, components, or patterns without a short rationale.
 
+## Commit Strategy
+- Prefer small, incremental commits over large bundled commits.
+- Split work into logical steps (for example: scaffold, styling setup, core pages, analytics).
+- Commit each step independently once it is working.
+- Push frequently so each step can be cherry-picked or rolled back safely.
+- Keep commit messages explicit about the single change introduced.
+
 ## Definition of Done (per change)
 - Matches project intent and minimalist scope
 - Type-safe and understandable
