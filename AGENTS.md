@@ -98,6 +98,13 @@ Important:
 - Keep dependencies minimal.
 - Ship small increments and iterate from real usage.
 
+## Decision Documentation Rule
+- For design-system, UX, architecture, or tooling decisions, always document:
+  - what we are optimizing for
+  - why this option was chosen
+  - key tradeoffs and what we are intentionally not optimizing for
+- Do not add tokens, components, or patterns without a short rationale.
+
 ## Definition of Done (per change)
 - Matches project intent and minimalist scope
 - Type-safe and understandable
