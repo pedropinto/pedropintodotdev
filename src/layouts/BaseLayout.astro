@@ -1,0 +1,73 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Minimalist engineering blog by Pedro Pinto." } = Astro.props;
+const pathname = Astro.url.pathname;
+
+const nav = [
+  { href: "/", label: "Home" },
+  { href: "/articles/", label: "Articles" },
+  { href: "/about/", label: "About" },
+];
+
+const isActive = (href: string): boolean => {
+  if (href === "/") return pathname === "/";
+  return pathname.startsWith(href);
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+  </head>
+  <body>
+    <header class="border-b border-[var(--color-muted)]/25">
+      <div class="site-container flex items-center justify-between py-5">
+        <a href="/" class="font-heading text-xl text-[var(--color-text)]">pedropintodotdev</a>
+        <nav class="flex items-center gap-5 text-sm">
+          {
+            nav.map((item) => (
+              <a
+                href={item.href}
+                class:list={[
+                  "transition-colors duration-200",
+                  isActive(item.href)
+                    ? "text-[var(--color-text)]"
+                    : "text-[var(--color-muted)] hover:text-[var(--color-accent)]",
+                ]}
+              >
+                {item.label}
+              </a>
+            ))
+          }
+          <a href="/rss.xml" class="text-[var(--color-muted)] hover:text-[var(--color-accent)] transition-colors duration-200">
+            RSS
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="site-container py-10 md:py-12">
+      <slot />
+    </main>
+
+    <footer class="border-t border-[var(--color-muted)]/25">
+      <div class="site-container flex flex-wrap gap-4 py-6 text-sm text-[var(--color-muted)]">
+        <a class="hover:text-[var(--color-accent)]" href="/rss.xml">RSS</a>
+        <a class="hover:text-[var(--color-accent)]" href="https://github.com/pedropinto" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="hover:text-[var(--color-accent)]" href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ArticleListItem from "../components/ArticleListItem.astro";
+import { getVisibleArticles } from "../lib/articles";
+
+const articles = await getVisibleArticles();
+const latest = articles.slice(0, 6);
+---
+
+<BaseLayout title="Pedro Pinto | Engineering Blog" description="Minimalist blog on engineering, people, process, and leadership.">
+  <section class="max-w-3xl">
+    <p class="text-sm uppercase tracking-[0.18em] text-[var(--color-muted)]">Pedro Pinto</p>
+    <h1 class="mt-3 font-heading text-4xl leading-tight text-[var(--color-text)] md:text-5xl">
+      Engineering manager who likes to code.
+    </h1>
+    <p class="mt-4 text-base text-[var(--color-muted)] md:text-lg">
+      Writing about engineering, software development, people, process, and leadership.
+    </p>
+    <a
+      href="/articles/"
+      class="mt-6 inline-flex rounded-full border border-[var(--color-muted)] px-4 py-2 text-sm text-[var(--color-text)] transition-colors duration-200 hover:bg-[var(--color-surface)]"
+    >
+      View articles
+    </a>
+  </section>
+
+  <section class="mt-12 md:mt-16">
+    <div class="flex items-center justify-between">
+      <h2 class="font-heading text-3xl text-[var(--color-text)]">Latest writing</h2>
+      <a href="/articles/" class="text-sm text-[var(--color-accent)] hover:underline">All articles</a>
+    </div>
+
+    <div class="mt-6 grid gap-4">
+      {latest.length === 0 ? (
+        <p class="text-[var(--color-muted)]">No published articles yet.</p>
+      ) : (
+        latest.map((article) => <ArticleListItem article={article} />)
+      )}
+    </div>
+  </section>
+</BaseLayout>

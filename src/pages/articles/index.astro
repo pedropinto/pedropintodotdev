@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ArticleListItem from "../../components/ArticleListItem.astro";
+import { getVisibleArticles } from "../../lib/articles";
+
+const articles = await getVisibleArticles();
+---
+
+<BaseLayout title="Articles | Pedro Pinto" description="Articles on engineering, leadership, and software development.">
+  <section class="max-w-3xl">
+    <h1 class="font-heading text-4xl text-[var(--color-text)]">Articles</h1>
+    <p class="mt-3 text-[var(--color-muted)]">Notes on engineering, leadership, and software.</p>
+  </section>
+
+  <section class="mt-8 grid gap-4">
+    {articles.length === 0 ? (
+      <p class="text-[var(--color-muted)]">No published articles yet.</p>
+    ) : (
+      articles.map((article) => <ArticleListItem article={article} />)
+    )}
+  </section>
+</BaseLayout>
