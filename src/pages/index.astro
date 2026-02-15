@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import profilePic from "../assets/profilepic.jpg";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ArticleListItem from "../components/ArticleListItem.astro";
 import { getVisibleArticles } from "../lib/articles";
@@ -7,14 +9,15 @@ const articles = await getVisibleArticles();
 const latest = articles.slice(0, 6);
 ---
 
-<BaseLayout title="Pedro Pinto | Engineering Blog" description="Minimalist blog on engineering, leadership, and processes.">
+<BaseLayout title="Pedro Pinto | Engineering Blog" description="Minimalist blog on engineering, people, process, and leadership.">
   <section class="grid max-w-4xl items-center gap-6 md:grid-cols-[auto_1fr]">
-    <img
-      src="/profilepic.jpg"
+    <Image
+      src={profilePic}
       alt="Pedro Pinto"
+      width={112}
+      height={112}
       class="h-24 w-24 rounded-full border border-[var(--color-muted)]/40 object-cover md:h-28 md:w-28"
       loading="eager"
-      decoding="async"
     />
 
     <div>
@@ -22,7 +25,7 @@ const latest = articles.slice(0, 6);
         Pedro Pinto
       </h1>
       <p class="mt-4 text-base text-[var(--color-muted)] md:text-lg">
-        Thoughts on Engineering, Leadership, AI, People and Processes. 
+        Writing about engineering, software development, people, process, and leadership.
       </p>
       <a
         href="/articles/"

@@ -1,16 +1,19 @@
 ---
+import { Image } from "astro:assets";
+import profilePic from "../assets/profilepic.jpg";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="About | Pedro Pinto" description="About Pedro Pinto and what this blog covers.">
   <article class="mx-auto grid max-w-5xl gap-10 md:grid-cols-[180px_1fr] md:items-start">
     <aside class="md:sticky md:top-24">
-      <img
-        src="/profilepic.jpg"
+      <Image
+        src={profilePic}
         alt="Pedro Pinto"
+        width={160}
+        height={160}
         class="h-28 w-28 rounded-full border border-[var(--color-muted)]/40 object-cover md:h-40 md:w-40"
         loading="lazy"
-        decoding="async"
       />
     </aside>
 
