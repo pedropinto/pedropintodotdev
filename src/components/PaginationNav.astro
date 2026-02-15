@@ -1,0 +1,57 @@
+---
+import { getArticlesPageUrl } from "../lib/articles";
+
+interface Props {
+  currentPage: number;
+  totalPages: number;
+  tagSlug?: string;
+}
+
+const { currentPage, totalPages, tagSlug } = Astro.props;
+const pages = Array.from({ length: totalPages }, (_, index) => index + 1);
+---
+
+{totalPages > 1 && (
+  <nav class="mt-10 flex flex-wrap items-center gap-2" aria-label="Articles pagination">
+    <a
+      href={getArticlesPageUrl(currentPage - 1, tagSlug)}
+      class:list={[
+        "rounded-full border px-3 py-1.5 text-sm transition-colors duration-200",
+        currentPage === 1
+          ? "pointer-events-none border-[var(--color-text)]/10 text-[var(--color-muted)]/60"
+          : "border-[var(--color-text)]/20 bg-[var(--color-white)] text-[var(--color-text)] hover:bg-[var(--color-surface)]/45",
+      ]}
+      aria-disabled={currentPage === 1}
+    >
+      Previous
+    </a>
+
+    {pages.map((page) => (
+      <a
+        href={getArticlesPageUrl(page, tagSlug)}
+        class:list={[
+          "rounded-full border px-3 py-1.5 text-sm transition-colors duration-200",
+          page === currentPage
+            ? "border-[var(--color-text)] bg-[var(--color-text)] text-[var(--color-white)]"
+            : "border-[var(--color-text)]/20 bg-[var(--color-white)] text-[var(--color-text)] hover:bg-[var(--color-surface)]/45",
+        ]}
+        aria-current={page === currentPage ? "page" : undefined}
+      >
+        {page}
+      </a>
+    ))}
+
+    <a
+      href={getArticlesPageUrl(currentPage + 1, tagSlug)}
+      class:list={[
+        "rounded-full border px-3 py-1.5 text-sm transition-colors duration-200",
+        currentPage === totalPages
+          ? "pointer-events-none border-[var(--color-text)]/10 text-[var(--color-muted)]/60"
+          : "border-[var(--color-text)]/20 bg-[var(--color-white)] text-[var(--color-text)] hover:bg-[var(--color-surface)]/45",
+      ]}
+      aria-disabled={currentPage === totalPages}
+    >
+      Next
+    </a>
+  </nav>
+)}

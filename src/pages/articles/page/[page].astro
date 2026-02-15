@@ -1,0 +1,59 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ArticleListItem from "../../../components/ArticleListItem.astro";
+import PaginationNav from "../../../components/PaginationNav.astro";
+import TagFilterBar from "../../../components/TagFilterBar.astro";
+import {
+  getAllTagsByFrequency,
+  getPaginatedArticles,
+  getVisibleArticles,
+} from "../../../lib/articles";
+import type { CollectionEntry } from "astro:content";
+
+export async function getStaticPaths() {
+  const allArticles = await getVisibleArticles();
+  const { totalPages } = getPaginatedArticles(allArticles, 1);
+
+  return Array.from({ length: Math.max(0, totalPages - 1) }, (_, index) => {
+    const page = index + 2;
+    const { items } = getPaginatedArticles(allArticles, page);
+
+    return {
+      params: { page: String(page) },
+      props: {
+        items,
+        currentPage: page,
+        totalPages,
+        tags: getAllTagsByFrequency(allArticles),
+      },
+    };
+  });
+}
+
+interface Props {
+  items: CollectionEntry<"articles">[];
+  currentPage: number;
+  totalPages: number;
+  tags: string[];
+}
+
+const { items, currentPage, totalPages, tags } = Astro.props;
+---
+
+<BaseLayout
+  title={`Articles - Page ${currentPage} | Pedro Pinto`}
+  description="Articles on engineering, leadership, and software development."
+>
+  <section class="max-w-3xl">
+    <h1 class="font-heading text-4xl text-[var(--color-text)]">Articles</h1>
+    <p class="mt-3 text-[var(--color-muted)]">Notes on engineering, leadership, and software.</p>
+  </section>
+
+  <TagFilterBar tags={tags} />
+
+  <section class="mt-8 grid gap-4">
+    {items.map((article) => <ArticleListItem article={article} />)}
+  </section>
+
+  <PaginationNav currentPage={currentPage} totalPages={totalPages} />
+</BaseLayout>
