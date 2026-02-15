@@ -2,7 +2,7 @@
 title: "Code Reviews as Coaching"
 description: "Turn code review from a passive approval step into a deliberate coaching loop that raises code quality, team judgment, and shared ownership over time."
 date: 2026-02-05
-tags: ["coding", "leadership"]
+tags: ["coding", "reviews", "mentorship", "quality", "architecture"]
 draft: false
 readingTime: 7
 ---

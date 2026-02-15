@@ -2,7 +2,7 @@
 title: "How I Run Engineering 1:1s"
 description: "A practical, repeatable one-on-one format."
 date: 2026-02-10
-tags: ["leadership", "people"]
+tags: ["leadership", "people", "1on1s", "feedback", "management"]
 draft: false
 readingTime: 6
 ---

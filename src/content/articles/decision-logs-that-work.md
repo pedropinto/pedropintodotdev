@@ -2,7 +2,7 @@
 title: "Decision Logs That Actually Work"
 description: "A lightweight ADR pattern."
 date: 2026-02-02
-tags: ["engineering", "process"]
+tags: ["decisions", "adrs", "documentation", "strategy", "alignment"]
 draft: false
 readingTime: 4
 ---

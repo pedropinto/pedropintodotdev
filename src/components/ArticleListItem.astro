@@ -37,7 +37,7 @@ const { article } = Astro.props;
   {article.data.tags.length > 0 && (
     <ul class="mt-4 flex flex-wrap gap-2">
       {article.data.tags.map((tag) => (
-        <li class="rounded-full border border-[var(--color-muted)]/30 bg-[var(--color-surface)]/35 px-2.5 py-1 text-xs text-[var(--color-text)]">
+        <li class="rounded-full border border-[var(--color-text)]/15 bg-[var(--color-white)]/90 px-2.5 py-1 text-xs text-[var(--color-text)]">
           {tag}
         </li>
       ))}

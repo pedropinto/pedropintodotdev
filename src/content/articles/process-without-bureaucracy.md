@@ -2,7 +2,7 @@
 title: "Process Without Bureaucracy"
 description: "A straightforward approach to introducing process constraints only where they reduce recurring failures and improve engineering coordination."
 date: 2026-02-08
-tags: ["process", "engineering"]
+tags: ["process", "engineering", "operations", "delivery", "workflow"]
 draft: false
 readingTime: 5
 ---

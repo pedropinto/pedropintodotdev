@@ -76,3 +76,9 @@ a {
   text-decoration: underline;
   text-underline-offset: 0.2em;
 }
+
+.tag-filter.is-active {
+  background: var(--color-text);
+  color: var(--color-white);
+  border-color: var(--color-text);
+}
