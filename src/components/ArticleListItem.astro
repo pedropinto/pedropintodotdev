@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { toTagSlug } from "../lib/articles";
 
 interface Props {
   article: CollectionEntry<"articles">;
@@ -37,8 +38,13 @@ const { article } = Astro.props;
   {article.data.tags.length > 0 && (
     <ul class="mt-4 flex flex-wrap gap-2">
       {article.data.tags.map((tag) => (
-        <li class="rounded-full border border-[var(--color-text)]/15 bg-[var(--color-white)]/90 px-2.5 py-1 text-xs text-[var(--color-text)]">
-          {tag}
+        <li>
+          <a
+            href={`/articles/tag/${toTagSlug(tag)}/`}
+            class="inline-flex rounded-full border border-[var(--color-text)]/15 bg-[var(--color-white)]/90 px-2.5 py-1 text-xs text-[var(--color-text)] transition-colors duration-200 hover:border-[var(--color-text)]/35 hover:bg-[var(--color-white)]"
+          >
+            {tag}
+          </a>
         </li>
       ))}
     </ul>

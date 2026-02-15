@@ -23,7 +23,7 @@ const activeInOverflow = hasOverflow
       <a
         href={getArticlesPageUrl(1)}
         class:list={[
-          "rounded-full border border-[var(--color-text)]/20 bg-[var(--color-white)] px-3 py-1.5 text-xs uppercase tracking-[0.08em] text-[var(--color-text)] transition-colors duration-200",
+          "tag-filter rounded-full border border-[var(--color-text)]/20 bg-[var(--color-white)] px-3 py-1.5 text-xs uppercase tracking-[0.08em] text-[var(--color-text)] transition-colors duration-200",
           !activeTagSlug && "is-active",
         ]}
         aria-current={!activeTagSlug ? "page" : undefined}
@@ -37,7 +37,7 @@ const activeInOverflow = hasOverflow
           <a
             href={getArticlesPageUrl(1, slug)}
             class:list={[
-              "rounded-full border border-[var(--color-text)]/20 bg-[var(--color-white)] px-3 py-1.5 text-xs uppercase tracking-[0.08em] text-[var(--color-text)] transition-colors duration-200",
+              "tag-filter rounded-full border border-[var(--color-text)]/20 bg-[var(--color-white)] px-3 py-1.5 text-xs uppercase tracking-[0.08em] text-[var(--color-text)] transition-colors duration-200",
               activeTagSlug === slug && "is-active",
             ]}
             aria-current={activeTagSlug === slug ? "page" : undefined}
@@ -56,7 +56,7 @@ const activeInOverflow = hasOverflow
                 <a
                   href={getArticlesPageUrl(1, slug)}
                   class:list={[
-                    "rounded-full border border-[var(--color-text)]/20 bg-[var(--color-white)] px-3 py-1.5 text-xs uppercase tracking-[0.08em] text-[var(--color-text)] transition-colors duration-200",
+                    "tag-filter rounded-full border border-[var(--color-text)]/20 bg-[var(--color-white)] px-3 py-1.5 text-xs uppercase tracking-[0.08em] text-[var(--color-text)] transition-colors duration-200",
                     activeTagSlug === slug && "is-active",
                   ]}
                   aria-current={activeTagSlug === slug ? "page" : undefined}
