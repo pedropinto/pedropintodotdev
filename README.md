@@ -34,6 +34,36 @@ Avoid building “fancy” features unless they clearly improve the writing or r
 - Avoid UI complexity: minimal custom components, mostly semantic HTML + utility classes.
 - Keep dependencies lean and easy to maintain.
 
+## Run Locally
+Prerequisites:
+- Node.js 22+ (recommended)
+- npm 10+
+
+Clone and install:
+```bash
+git clone git@github.com:pedropinto/pedropintodotdev.git
+cd pedropintodotdev
+npm install
+```
+
+Start development server:
+```bash
+npm run dev
+```
+
+Then open:
+- `http://localhost:4321`
+
+Build and preview production output:
+```bash
+npm run build
+npm run preview
+```
+
+Useful notes:
+- Draft posts (`draft: true`) are visible in development and hidden in production builds.
+- Content lives in `src/content/articles/*.md`.
+
 ## Color Palette
 Use this palette from the selected reference image:
 - `#2F4156` (Navy)
