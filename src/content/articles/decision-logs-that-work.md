@@ -1,6 +1,6 @@
 ---
 title: "Decision Logs That Actually Work"
-description: "A lightweight ADR pattern that teams keep using after the first month."
+description: "A lightweight ADR pattern."
 date: 2026-02-02
 tags: ["engineering", "process"]
 draft: false

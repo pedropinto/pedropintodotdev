@@ -1,6 +1,6 @@
 ---
 title: "How I Run Engineering 1:1s"
-description: "A simple structure that keeps conversations tactical, honest, and useful."
+description: "A practical, repeatable one-on-one format."
 date: 2026-02-10
 tags: ["leadership", "people"]
 draft: false

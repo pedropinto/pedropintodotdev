@@ -1,6 +1,6 @@
 ---
 title: "Code Reviews as Coaching"
-description: "Treat pull requests as an engineering learning loop, not a gate."
+description: "Turn code review from a passive approval step into a deliberate coaching loop that raises code quality, team judgment, and shared ownership over time."
 date: 2026-02-05
 tags: ["coding", "leadership"]
 draft: false

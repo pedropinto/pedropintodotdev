@@ -8,12 +8,10 @@ interface Props {
 const { article } = Astro.props;
 ---
 
-<article class="rounded-xl border border-[var(--color-muted)]/30 bg-[var(--color-surface)]/40 p-5">
-  <h3 class="font-heading text-xl text-[var(--color-text)]">
-    <a class="hover:text-[var(--color-accent)]" href={`/articles/${article.slug}/`}>{article.data.title}</a>
-  </h3>
-  <p class="mt-2 text-sm text-[var(--color-muted)]">{article.data.description}</p>
-  <p class="mt-3 text-xs text-[var(--color-muted)]">
+<article
+  class="group rounded-2xl border border-[var(--color-muted)]/20 bg-[var(--color-white)]/80 p-6 shadow-[0_8px_24px_rgba(47,65,86,0.06)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_36px_rgba(47,65,86,0.12)]"
+>
+  <p class="text-xs uppercase tracking-[0.14em] text-[var(--color-muted)]">
     <time datetime={article.data.date.toISOString()}>
       {article.data.date.toLocaleDateString("en-US", {
         year: "numeric",
@@ -23,12 +21,26 @@ const { article } = Astro.props;
     </time>
     <span class="mx-2">•</span>
     <span>{article.data.readingTime} min read</span>
-    {article.data.tags.length > 0 && <span class="mx-2">•</span>}
-    {article.data.tags.map((tag, index) => (
-      <>
-        <span>{tag}</span>
-        {index < article.data.tags.length - 1 && <span class="mx-1">·</span>}
-      </>
-    ))}
   </p>
+
+  <h3 class="mt-3 font-heading text-2xl leading-tight text-[var(--color-text)]">
+    <a
+      class="transition-colors duration-200 group-hover:text-[var(--color-accent)]"
+      href={`/articles/${article.slug}/`}
+    >
+      {article.data.title}
+    </a>
+  </h3>
+
+  <p class="mt-3 text-[0.98rem] leading-relaxed text-[var(--color-muted)]">{article.data.description}</p>
+
+  {article.data.tags.length > 0 && (
+    <ul class="mt-4 flex flex-wrap gap-2">
+      {article.data.tags.map((tag) => (
+        <li class="rounded-full border border-[var(--color-muted)]/30 bg-[var(--color-surface)]/35 px-2.5 py-1 text-xs text-[var(--color-text)]">
+          {tag}
+        </li>
+      ))}
+    </ul>
+  )}
 </article>

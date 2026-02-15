@@ -1,6 +1,6 @@
 ---
 title: "Process Without Bureaucracy"
-description: "How to add structure without slowing down delivery velocity."
+description: "A straightforward approach to introducing process constraints only where they reduce recurring failures and improve engineering coordination."
 date: 2026-02-08
 tags: ["process", "engineering"]
 draft: false
